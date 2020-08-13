@@ -1,0 +1,9 @@
+[submodule "queryer"]
+	path = queryer
+	url = https://git.octalorca.me/sombra/arbron/queryer.git
+[submodule "cache"]
+	path = cache
+	url = https://git.octalorca.me/sombra/arbron/cache.git
+[submodule "router"]
+	path = router
+	url = https://git.octalorca.me/sombra/arbron/router.git
