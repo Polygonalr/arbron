@@ -1,0 +1,49 @@
+version: "3"
+services:
+  redis:
+    image: redis:6.0-alpine
+    restart: unless-stopped
+    networks:
+      - arbronnet
+
+  queryer:
+    build: ./queryer
+    environment:
+      RUST_LOG: debug
+      KEYS_FILE: /keys.txt
+      LISTEN: 0.0.0.0:1539
+      TIMEOUT: 15
+    volumes:
+      - ./keys.txt:/keys.txt
+    networks:
+      - arbronnet
+
+  cache:
+    build: ./cache
+    environment:
+      RUST_LOG: debug
+      REDIS_ADDRESS: redis://redis
+      GET_ADDRESS: 0.0.0.0:1538
+      SET_ADDRESS: 0.0.0.0:1537
+    networks:
+      - arbronnet
+
+  router:
+    build: ./router
+    environment:
+      RUST_LOG: debug
+      LISTEN_ADDRESS: 0.0.0.0:1540
+      QUERYER_ADDRESS: queryer:1539
+      CACHE_GET_ADDRESS: cache:1538
+      CACHE_SET_ADDRESS: cache:1537
+    ports:
+      - "1540:1540"
+    networks:
+      - arbronnet
+
+networks:
+  arbronnet:
+
+volumes:
+  redis:
+    driver: local
