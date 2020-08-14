@@ -9,7 +9,7 @@ services:
   queryer:
     build: ./queryer
     environment:
-      RUST_LOG: debug
+      RUST_LOG: info
       KEYS_FILE: /keys.txt
       LISTEN: 0.0.0.0:1539
       TIMEOUT: 15
@@ -21,7 +21,7 @@ services:
   cache:
     build: ./cache
     environment:
-      RUST_LOG: debug
+      RUST_LOG: info
       REDIS_ADDRESS: redis://redis
       GET_ADDRESS: 0.0.0.0:1538
       SET_ADDRESS: 0.0.0.0:1537
@@ -32,7 +32,7 @@ services:
   router:
     build: ./router
     environment:
-      RUST_LOG: debug
+      RUST_LOG: info
       LISTEN_ADDRESS: 0.0.0.0:1540
       QUERYER_ADDRESS: queryer:1539
       CACHE_GET_ADDRESS: cache:1538
