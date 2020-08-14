@@ -7,3 +7,6 @@
 [submodule "router"]
 	path = router
 	url = https://git.octalorca.me/sombra/arbron/router.git
+[submodule "frontend"]
+	path = frontend
+	url = https://git.octalorca.me/sombra/arbron/frontend.git

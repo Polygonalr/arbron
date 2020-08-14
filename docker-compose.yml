@@ -42,6 +42,16 @@ services:
     networks:
       - arbronnet
 
+  frontend:
+    build: 
+      context: ./frontend
+      args:
+        - VUE_APP_API_URL=http://192.168.1.101:1540
+    ports:
+      - "1541:80"
+    networks:
+      - "arbronnet"
+
 networks:
   arbronnet:
 
