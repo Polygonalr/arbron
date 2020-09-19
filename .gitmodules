@@ -1,15 +1,15 @@
 [submodule "queryer"]
 	path = queryer
-	url = https://git.octalorca.me/sombra/arbron/queryer.git
+	url = https://git.octalorca.me/sombra/arbron-queryer.git
 [submodule "cache"]
 	path = cache
-	url = https://git.octalorca.me/sombra/arbron/cache.git
+	url = https://git.octalorca.me/sombra/arbron-cache.git
 [submodule "router"]
 	path = router
-	url = https://git.octalorca.me/sombra/arbron/router.git
+	url = https://git.octalorca.me/sombra/arbron-router.git
 [submodule "frontend"]
 	path = frontend
-	url = https://git.octalorca.me/sombra/arbron/frontend.git
+	url = https://git.octalorca.me/sombra/arbron-frontend.git
 [submodule "reports"]
 	path = reports
-	url = https://git.octalorca.me/sombra/arbron/reports.git
+	url = https://git.octalorca.me/sombra/arbron-reports.git
